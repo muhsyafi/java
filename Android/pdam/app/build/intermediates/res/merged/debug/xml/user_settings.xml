@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Alarm Settings" >
+       
+        <ListPreference
+            android:key="prefUpdateWaktuAlarm"
+            android:title="Waktu Alarm"
+            android:summary="Waktu alarm di set"
+            android:entries="@array/updateWaktuAlarm"
+            android:entryValues="@array/updateWaktuAlarmValues"
+            />
+
+        <ListPreference
+            android:key="prefUpdateNotifikasi"
+            android:title="jenis Alarm"
+            android:summary="seting jenis alarm"
+            android:entries="@array/updateJenisAlarm"
+            android:entryValues="@array/updateJenisAlarmValues"
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen><!-- From: file:/Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/res/xml/user_settings.xml -->

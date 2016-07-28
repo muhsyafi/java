@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@drawable/back">
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/btnUpload"
+        android:background="@drawable/upload"
+        android:visibility="visible"
+        android:layout_above="@+id/btnSetting"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/btnDownload"
+        android:background="@drawable/download"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/btnSetting"
+        android:background="@drawable/setting"
+        android:layout_below="@+id/btnDownload"
+        android:layout_toRightOf="@+id/btnUpload"
+        android:layout_toEndOf="@+id/btnUpload" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="28"
+        android:id="@+id/txtGambar"
+        android:typeface="sans"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_size"
+        android:textColor="@color/putih"
+        android:maxLength="8"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Hari ini"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnSetting"
+        android:layout_toEndOf="@+id/btnSetting"
+        android:layout_marginLeft="18dp"
+        android:textColor="@color/putih"
+        android:layout_marginStart="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Foto"
+        android:id="@+id/textView2"
+        android:textColor="@color/putih"
+        android:layout_alignBottom="@+id/txtGambar"
+        android:layout_alignRight="@+id/btnDownload"
+        android:layout_alignEnd="@+id/btnDownload" />
+
+</RelativeLayout>

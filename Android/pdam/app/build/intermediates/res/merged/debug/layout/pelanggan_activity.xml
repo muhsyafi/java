@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+   
+    android:orientation="vertical" >
+
+   <RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:focusableInTouchMode="true"
+    >
+
+    <EditText
+        android:id="@+id/input_cari"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/cari"
+        android:hint="cari"
+         android:nextFocusUp="@id/input_cari"
+          android:nextFocusLeft="@id/input_cari"
+        android:inputType="number" />
+
+    <ImageButton
+        android:id="@+id/bnVoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/voice"
+        android:background="#fff"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        />
+
+</RelativeLayout>
+    <ListView
+        android:id="@+id/list_kamus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout><!-- From: file:/Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/res/layout/pelanggan_activity.xml -->

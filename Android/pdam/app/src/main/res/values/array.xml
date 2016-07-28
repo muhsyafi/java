@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="updateWaktuAlarm">
+        
+        <item name="0">Tepat waktu</item>
+        <item name="10">10 menit</item>
+        <item name="15">15 menit</item>
+        
+    </string-array>
+    <string-array name="updateWaktuAlarmValues">
+        
+        <item name="1">0</item>
+        <item name="2">10</item>
+        <item name="3">15</item>
+   
+    </string-array>
+      <string-array name="updateJenisAlarm">
+          
+        <item name="1">Notifikasi</item>
+        <item name="2">Getar</item>
+        <item name="3">Suara </item>
+        
+    </string-array>
+    <string-array name="updateJenisAlarmValues">
+        <item name="1">notifikasi</item>
+        <item name="2">getar</item>
+        <item name="3">suara</item>
+   
+    </string-array>
+     
+</resources>

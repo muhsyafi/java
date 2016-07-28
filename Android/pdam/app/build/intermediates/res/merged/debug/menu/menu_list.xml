@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.tajwid.DownloadActivity" >
+
+    <item
+        android:id="@+id/list_data"
+        android:orderInCategory="100"
+        android:icon="@drawable/profil"
+        android:showAsAction="ifRoom"
+        android:title="home"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+     >
+
+    <item
+        android:id="@+id/list_box"
+        android:icon="@drawable/boxmini"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="List"/>
+
+    <menu>
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/export"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom"
+            android:title="Setting"/>
+        <item
+            android:id="@+id/menu_about"
+            android:orderInCategory="1"
+            android:showAsAction="always"
+            android:title="about"/>
+        <item
+            android:id="@+id/menu_exit"
+            android:orderInCategory="2"
+            android:title="Exit"/>
+    </menu>
+
+  
+   
+    </menu>
+    
+</menu>
+<!-- From: file:/Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/res/menu/menu_list.xml -->

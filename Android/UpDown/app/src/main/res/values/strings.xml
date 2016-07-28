@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PDAM DSML</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="error">Error</string>
+    <string name="title_activity_dsml">DsmlActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="lokal">192.168.10.211</string>
+    <string name="publik">36.78.220.224</string>
+    <string name="user">pict</string>
+    <string name="pass">satu2345</string>
+    <string name="app_user">app</string>
+    <string name="app_pass">satu2345</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:id="@+id/custom_layout"
+    android:orientation="horizontal" android:padding="0dp"
+    android:layout_height="50dp" android:background="@color/putih"
+    android:gravity="top">
+    <ImageView android:layout_height="wrap_content"
+        android:layout_width="50dp" android:id="@+id/judul"
+        android:src="@drawable/warning" android:layout_gravity="center_vertical"></ImageView>
+    <LinearLayout android:layout_width="wrap_content"
+        android:id="@+id/linearLayout1" android:orientation="vertical"
+        android:layout_height="wrap_content" android:paddingLeft="15dp">
+        <TextView android:layout_height="wrap_content" android:id="@+id/isi"
+            android:layout_width="wrap_content" android:textColor="#54a846"
+            android:textSize="20dp" android:text=""></TextView>
+    </LinearLayout>
+
+    <TextView android:id="@+id/textPesan" android:layout_width="fill_parent"
+        android:layout_height="20dp" android:textColor="#404040"
+        android:textSize="15dp"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_toRightOf="@+id/judul"
+        android:layout_toEndOf="@+id/judul"
+        android:text="@string/error"></TextView>
+
+</RelativeLayout>
+

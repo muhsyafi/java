@@ -1,0 +1,101 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:2:1-61:12
+	package
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:3:5-27
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:5:5-30
+	android:versionCode
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:10:6-82
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:10:23-79
+uses-permission#android.permission.CAMERA
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:15:5-65
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:15:22-62
+uses-feature#android.hardware.camera
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:16:5-60
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:16:19-57
+application
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:19:5-59:19
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:22:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:20:9-43
+	android:icon
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:21:9-43
+	android:theme
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:23:9-70
+activity#com.pdambaru.PelangganListActivity
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:24:9-27:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:26:13-45
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:25:13-62
+activity#com.pdambaru.PelangganDataActivity
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:28:9-31:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:30:13-45
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:29:13-62
+activity#com.pdambaru.MagicActivity
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:32:9-35:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:34:13-45
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:33:13-54
+activity#com.pdambaru.AndroidCamera3
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:36:9-39:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:38:13-45
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:37:13-55
+activity#com.pdambaru.SettingActivity
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:40:10-43:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:42:13-42
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:41:13-56
+activity#com.pdambaru.PelangganInputActivity
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:44:10-47:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:46:13-40
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:45:13-63
+activity#com.pdambaru.SplashActivity
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:49:9-58:20
+	android:label
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:51:13-45
+	android:theme
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:52:12-59
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:50:13-55
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:53:13-57:29
+action#android.intent.action.MAIN
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:54:17-69
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:54:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:56:17-77
+	android:name
+		ADDED from /Users/muhsyafi/AndroidStudioProjects/pdam/app/src/main/AndroidManifest.xml:56:27-74
