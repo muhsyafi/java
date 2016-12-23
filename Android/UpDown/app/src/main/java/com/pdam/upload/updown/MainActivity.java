@@ -195,7 +195,6 @@ public class MainActivity extends Activity {
                             prg.setProgress(jumpTime);
                             uploadFile(files[jumpTime],getString(R.string.user),getString(R.string.pass));
                             jumpTime+=1;
-                            Log.i("Jum",String.valueOf(jumpTime));
                             if (jumpTime == totalProgress) alat.uploadDSML(fileDSML,MainActivity.this, alat.getIP(MainActivity.this));
                             if (jumpTime == totalProgress) prg.dismiss();
                         }
@@ -294,7 +293,6 @@ public class MainActivity extends Activity {
 
                         // create alert dialog
                         AlertDialog alertDialog = alertDialogBuilder.create();
-
                         // show it
                         alertDialog.show();
                     }
@@ -305,6 +303,7 @@ public class MainActivity extends Activity {
 
             if (totalProgress>0){
                 if (alat.cekKoneksi(MainActivity.this,alat.getIP(MainActivity.this))){
+                        builderSingle.setCancelable(false);
                         builderSingle.show();
                 }else{
                     prg.dismiss();
