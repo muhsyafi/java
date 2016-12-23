@@ -34,13 +34,17 @@ import java.util.HashMap;
 import it.sauronsoftware.ftp4j.FTPClient;
 import it.sauronsoftware.ftp4j.FTPDataTransferListener;
 
-public class DsmlActivity extends Activity {
-    String url = "http://36.78.220.224/meter/core/get.php?act=get-dsml";
+public class DsmlActivity extends AppCompatActivity {
+    Alat alat;
+    public String url;
     String tag_json_arry = "json_array_req";
     ListView lstDsml;
     ProgressDialog pDialog;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Init alat
+        alat = new Alat(this);
         setContentView(R.layout.activity_dsml);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
@@ -54,7 +58,7 @@ public class DsmlActivity extends Activity {
 
     public void request(){
         RequestQueue queue = Volley.newRequestQueue(DsmlActivity.this);
-        String url ="http://36.78.220.224/meter/core/get.php?act=get-dsml";
+        url = "http://"+alat.getIP(DsmlActivity.this)+"/api/pm@dsml";;
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -104,7 +108,7 @@ public class DsmlActivity extends Activity {
     }
     //Perfect code to download single file from FTP server
     private void downloadStart(String nama) {
-        final String host = "36.78.220.224";
+        final String host = alat.getIP(DsmlActivity.this);
         final String user = "dsml";
         final String pass = "satu2345";
         FTPClient ftp = new FTPClient();

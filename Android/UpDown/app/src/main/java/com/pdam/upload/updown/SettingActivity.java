@@ -4,6 +4,7 @@ package com.pdam.upload.updown;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -22,8 +23,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.Calendar;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import it.sauronsoftware.ftp4j.FTPClient;
 import it.sauronsoftware.ftp4j.FTPDataTransferListener;
@@ -76,11 +83,11 @@ public class SettingActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton rb = (RadioButton)findViewById(checkedId);
                 if (rb.getText().equals("Publik")){
-                    alat.insertDatabase("update host set stat='0'");
-                    alat.insertDatabase("update host set stat='1' where server='publik'");
+                    alat.insertDatabase("update host set stat='0' where server='lokal'");
+                    alat.insertDatabase("update host set stat='1',host='"+getString(R.string.publik)+"' where server='publik'");
                 }else if (rb.getText().equals("Lokal")){
-                    alat.insertDatabase("update host set stat='0'");
-                    alat.insertDatabase("update host set stat='1' where server='lokal'");
+                    alat.insertDatabase("update host set stat='0' where server='publik'");
+                    alat.insertDatabase("update host set stat='1', host='"+getString(R.string.lokal)+"' where server='lokal'");
                 }
             }
         });
@@ -247,5 +254,174 @@ public class SettingActivity extends AppCompatActivity {
         }
 
     } //End download
+
+
+//    public class Compress {
+//        public ProgressDialog prg;
+//        private static final int BUFFER = 2048;
+//
+//     private String[] _files;
+//     private String _zipFile;
+//
+//     public Compress(String[] files, String zipFile) {
+//         _files = files;
+//         _zipFile = zipFile;
+//     }
+//
+//     public void zip() {
+//         try  {
+//             //Progress
+//             prg.setMessage("Proses mengkompres dan upload file, tunggu sampai selesai...");
+//             //prg.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//             prg.setIndeterminate(true);
+//             final File[] files = alat.getFoto();
+//             prg.setCanceledOnTouchOutside(false);
+//             prg.setMax(files.length);
+//             final int totalProgress = files.length;
+//             prg.show();
+//
+//             //Zip file
+//             String[] stringFile = new String[files.length];
+//             int jumlahFile = 0;
+//             while (jumlahFile<totalProgress){
+//                 stringFile[jumlahFile]=files[jumlahFile].toString();
+//                 jumlahFile+=1;
+//             }
+//             //Compress cp = new Compress(stringFile,mediaStorageDir.toString()+"/Download/"+alat.getSettingCode(MainActivity.this)+"_"+alat.getTanggal()+".zip");
+//             //cp.zip();
+//             //End zipe
+//
+//             final Thread t = new Thread() {
+//                 @Override
+//                 public void run() {
+//
+//                     try {
+//                         BufferedInputStream origin = null;
+//                         FileOutputStream dest = new FileOutputStream(_zipFile);
+//
+//                         ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(dest));
+//
+//                         byte data[] = new byte[BUFFER];
+//
+//                         int jumpTime = 0;
+//                         while (jumpTime < totalProgress) {
+//                             FileInputStream fi = new FileInputStream(_files[jumpTime]);
+//                             origin = new BufferedInputStream(fi, BUFFER);
+//                             ZipEntry entry = new ZipEntry(_files[jumpTime].substring(_files[jumpTime].lastIndexOf("/") + 1));
+//                             out.putNextEntry(entry);
+//                             int count;
+//                             while ((count = origin.read(data, 0, BUFFER)) != -1) {
+//                                 out.write(data, 0, count);
+//                             }
+//                             origin.close();
+//                             prg.setProgress(jumpTime);
+//                             //uploadFile(files[jumpTime]);
+//                             jumpTime+=1;
+//                             //if (jumpTime == totalProgress-1) alat.uploadDSML(fileDSML,MainActivity.this, alat.getIP(MainActivity.this));
+//                             if (jumpTime == totalProgress) {
+//                                 out.close();
+//                                 Upload up = new Upload();
+//                                 File mediaStorageDir = new File(Environment.getExternalStorageDirectory().getPath(), "/");
+//                                 File fl = new File(mediaStorageDir.toString()+"/Download/"+alat.getSettingCode(SettingActivity.this)+"_"+alat.getTanggal()+".zip");
+//                                 //alat.uploadDSML(fileDSML,MainActivity.this, alat.getIP(MainActivity.this));
+//                                 up.uploadFile(fl,getString(R.string.pictzip_user),getString(R.string.pictzip_pass));
+//
+//                             }
+//
+//                         }
+//
+//                     }catch (Exception e1) {
+//                         e1.printStackTrace();
+//                     }
+//                 }
+//             };
+//             if (totalProgress>0){
+//                 if (alat.cekKoneksi(SettingActivity.this,alat.getIP(SettingActivity.this))){
+//                     t.start();
+//
+//                 }else{
+//                     prg.dismiss();
+//                     alat.pesan("Tidak ada koneksi, silahkan periksa koneksi ke "+ alat.getIP(SettingActivity.this)+"",SettingActivity.this);
+//                 }
+//             }else{
+//                 prg.dismiss();
+//                 alat.pesan("Tidak file foto untuk hari ini", SettingActivity.this);
+//
+//                }
+//                //End progress
+//////
+//////
+//            //    for(int i=0; i < _files.length; i++) {
+//            //        //Log.v("Compress", "Adding: " + _files[i]);
+//            //        FileInputStream fi = new FileInputStream(_files[i]);
+//            //        origin = new BufferedInputStream(fi, BUFFER);
+//            //        ZipEntry entry = new ZipEntry(_files[i].substring(_files[i].lastIndexOf("/") + 1));
+//            //        out.putNextEntry(entry);
+//            //        int count;
+//            //        while ((count = origin.read(data, 0, BUFFER)) != -1) {
+//            //            out.write(data, 0, count);
+//            //        }
+//            //        origin.close();
+//            //    }
+//////
+//            //    out.close();
+//            } catch(Exception e) {
+//                e.printStackTrace();
+//            }
+////
+//        }
+//        public void uploadFile(final File filename, final String username, final String password){
+//            FTPClient client = new FTPClient();
+//            try {
+//                client.connect(alat.getIP(SettingActivity.this), 21);
+//                client.login(username, password);
+//                client.setType(FTPClient.TYPE_BINARY);
+//                client.changeDirectory("/");
+//                client.upload(filename,
+//                        new FTPDataTransferListener() {
+//
+//                            public void transferred(int arg0) {
+//                                Log.i("Jumlah", " transferred ..."+arg0 );
+//                            }
+//
+//                            public void started() {
+//                                // TODO Auto-generated method stub
+//                                //Toast.makeText(getBaseContext(), " Upload Started ...", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            public void failed() {
+//
+//                                prg.dismiss();
+//                                //alat.pesan("Gagal mengupload file, silahkan ulangi kembali", MainActivity.this);
+//                                uploadFile(filename,username,password);
+//                            }
+//
+//                            public void completed() {
+//                                //Toast.makeText(getBaseContext(), " Berhasil ...", Toast.LENGTH_LONG).show();
+//                                Log.v("log_tag", "Transfer completed");
+//                                prg.dismiss();
+//                            }
+//
+//                            public void aborted() {
+//                                //Toast.makeText(getBaseContext()," Transfer gagal, coba lagi...", Toast.LENGTH_SHORT).show();
+//
+//                            }
+//                        });
+//            } catch (Exception e){
+//                prg.dismiss();
+//                //e.printStackTrace();
+//                try {
+//                    client.disconnect(true);
+//                }catch (Exception e2){
+//                    //e2.printStackTrace();
+//                }
+//            }
+//        }
+//
+//    }
+
+    //Upload task
+
+    //End upload task
 
 }

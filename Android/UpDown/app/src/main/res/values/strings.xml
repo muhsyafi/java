@@ -10,4 +10,6 @@
     <string name="pass">satu2345</string>
     <string name="app_user">app</string>
     <string name="app_pass">satu2345</string>
+    <string name="pictzip_user">pictzip</string>
+    <string name="pictzip_pass">satu2345</string>
 </resources>

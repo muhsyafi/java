@@ -72,4 +72,25 @@
         android:layout_alignRight="@+id/btnDownload"
         android:layout_alignEnd="@+id/btnDownload" />
 
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/btnManual"
+        android:background="@drawable/foto"
+        android:layout_below="@+id/btnUpload"
+        android:layout_toLeftOf="@+id/btnSetting"
+        android:layout_toStartOf="@+id/btnSetting"
+        android:layout_marginTop="42dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/textPesan"
+        android:textColor="@color/merah"
+        android:textSize="18sp"
+        android:text="Gagal upload, ulangi kembali"
+        android:layout_below="@+id/txtGambar"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
